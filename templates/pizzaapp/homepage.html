@@ -4,12 +4,20 @@
 {% block content %}
 
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" style="margin-left: 10px;">Welcome</a>
+
+  <a class="navbar-brand" style="margin-left: 10px;">
+  	<img src="{% static 'img/logo.jpg' %}" style="height:60px;"> </a>
   <a href="/loginuser/" class="btn btn-danger" style="margin-right: 10px;"> Login Here</a>
 </nav>
 {% for message in messages %}
 <p style="text-align: center;">{{message}}</p>
 {% endfor %}
+
+<style type="text/css">
+	body{
+		background:url("{% static 'img/bg1.jpg' %}");
+	}
+</style>
 <div class="container-fluid" style="position: relative;">
 	<div style="position: absolute;top:50px; right: 20px; width: 450px;height:350px; background-color: orange; padding: 40px;" class="container" >
 		<h2 style="text-align: center;color: white"> Sign Up !</h2><br>
