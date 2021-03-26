@@ -9,10 +9,12 @@
 <p style="color: green">{{message}}</p>
 {% endfor %}
 
+
+
 <form action="/placeorder/" method="POST">
+	{% csrf_token %}
 <div style="margin: auto; width: 600px;position: relative;" class="container">
 	<table style="width: 70%">
-	
 	<tr>
 		<th>Pizza</th>
 		<th>Price</th>
@@ -22,14 +24,15 @@
 	<tr>
 		<td>{{pizza.name}}</td>
 		<td>{{pizza.price}}</td>
-		<td><input type="number" name="quantity" style="width: 70px;"></td>
+		<td><input type="number" name="{{pizza.id}}" style="width: 70px;"></td>
 	</tr>
 	{% endfor %}
 </table>
-<input type="text" name="" placeholder="address" style="width: 320px; height:50px; margin-top: 30px;"><br>
+<input type="text" name="address" placeholder="address" style="width: 320px; height:50px; margin-top: 30px;"><br>
 
 <input type="submit" name="" value="Place Order"class="btn btn-outline-success" style="float: right; margin-top: 100px">
 </form>
+
 </div>
 
 {% endblock %}
